@@ -1,11 +1,11 @@
-//²âÊÔÑùÀý:"-1","0","+1","   89","+-2"
+//Â²Ã¢ÃŠÃ”Ã‘Ã¹Ã€Ã½:"-1","0","+1","   89","+-2"
 
 #include <iostream>
 #include <string>
 
 
 using namespace std;
-
+#define MAX 2147483647
 
 class Solution {
 public:
@@ -34,10 +34,10 @@ public:
 			else 
 				break;
 		}
-		if(num > 2147483647)
+		if(num > MAX)
 		{
-			num = 2147483647;
-			if(!flag) num = 2147483648;
+			num = MAX;
+			if(!flag) num = MAX;
 		}
 		if(!flag) num = -num;
 		return num;
