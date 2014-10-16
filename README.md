@@ -1,4 +1,4 @@
 Leetcode
 ========
 
-The answers to Leetcode.com
+Answers to Leetcode.com
