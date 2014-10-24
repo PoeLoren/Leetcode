@@ -1,3 +1,4 @@
+//http://www.cnblogs.com/ganganloveu/p/3761715.html
 class Solution {
 public:
     int jump(int A[], int n) {
