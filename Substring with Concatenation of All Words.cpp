@@ -1,3 +1,4 @@
+//a faster method http://blog.csdn.net/sunjilong/article/details/8272032
 class Solution {
 public:
     vector<int> findSubstring(string S, vector<string> &L) {
