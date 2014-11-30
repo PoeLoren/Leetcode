@@ -1,4 +1,3 @@
-//http://www.tuicool.com/articles/ZnuEVfJ
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -72,5 +71,3 @@ public:
         return q.front();
     }
 };
-
-
