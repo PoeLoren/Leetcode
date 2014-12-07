@@ -1,14 +1,14 @@
 class Solution {
 public:
     vector<string> wordBreak(string s, unordered_set<string> &dict) {
-        vector<bool> f(s.size() + 1, false);
-        vector<vector<bool> > p(s.size() + 1,vector<bool> (s.size() + 1,false));
+        vector<bool> f(s.size() + 1, false);//if s[0,i) can be broken into words in dict, f[i] is true
+        vector<vector<bool> > p(s.size() + 1,vector<bool> (s.size() + 1,false));//if p[i][j]== true,s[i,j) is a word in dict
         f[0] = true;
         for(int i = 1;i <= s.size();i++)
         {
             for(int j = 0; j < i;j++)
             {
-                if(f[j] && dict.find(s.substr(j,i - j)) != dict.end())
+                if(f[j] && dict.find(s.substr(j,i - j)) != dict.end()) //if s[0,j) can be broken and s[j,i) is in dict
                 {
                     f[i] = true;
                     p[j][i] = true;
