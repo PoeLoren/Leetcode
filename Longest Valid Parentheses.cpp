@@ -6,17 +6,24 @@ public:
         int last = -1;//last ')' is the point between groups
         for(int i = 0;i < s.size();i++)
         {
-            if(s[i] == '('){
+            if(s[i] == '(')
+            {
                 cStack.push(i);
-            }else{
+            }
+            else
+            {
                 if(cStack.empty())//no '(' match
                     last = i;
-                else{
+                else
+                {
                     cStack.pop();
-                    if(cStack.empty()){
-                        len = max(len,i-last);
-                    }else{
-                        len = max(len,i-cStack.top());
+                    if(cStack.empty())//there are two kind of situation 
+                    {
+                        len = max(len,i-last);//")","()))()()", maxlen is between last ')' of group and current ')'
+                    }
+                    else
+                    {
+                        len = max(len,i-cStack.top());//"((()()())", maxlen is between peer '(' and current ')'
                     }
                 }
             }
