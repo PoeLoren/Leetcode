@@ -7,6 +7,25 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+
+class Solution {
+public:
+    vector<TreeNode*> path;
+    bool isFound = false;
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if(!root)
+            return root;
+        if(root == p || root == q)
+            return root;
+        TreeNode* L = lowestCommonAncestor(root->left, p, q);
+        TreeNode* R = lowestCommonAncestor(root->right, p, q);
+        if(L && R)
+            return root;
+        return L ? L : R;
+    }
+};
+
 class Solution {
 public:
     vector<TreeNode*> path;
